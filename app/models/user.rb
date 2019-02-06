@@ -9,4 +9,6 @@ class User < ApplicationRecord
   enum gender: %i[male female others]
   has_one_time_password column_name: :otp, length: 4
   has_secure_password
+
+  accepts_nested_attribute_for :address
 end
