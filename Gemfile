@@ -23,6 +23,7 @@ gem 'active_model_otp'
 gem 'rotp', '~> 3.3.0'
 gem 'rails_admin', '~> 1.3'
 gem 'telephone_number'
+gem 'jwt'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -18,9 +18,10 @@ class Api::V1::BaseController < ApplicationController
 
   def set_current_user
     begin
-      token = request.header["Authorization"].to_s[6..-1]
+      token = request.headers['Authorization'].to_s[6..-1]
       return unless token
-      @current_user = User.find_by(auth_token: token)
+      payload = Token.new(token)
+      @current_user = User.find(payload.user_id) if payload.valid?
     rescue Exception => e
       return render json: { error: e.message }, status: :unprocessable_entity
     end
